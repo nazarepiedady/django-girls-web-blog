@@ -12,6 +12,8 @@
 			</h1>
 		</header>
 
-		{{ posts }}
+		{% for post in posts %}
+			{{ post }}
+		{% endfor %}
 	</body>
 </html>
