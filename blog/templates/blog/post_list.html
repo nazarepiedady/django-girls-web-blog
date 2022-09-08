@@ -12,8 +12,16 @@
 			</h1>
 		</header>
 
-		{% for post in posts %}
-			{{ post }}
-		{% endfor %}
+		<main>
+			{% for post in posts %}
+				<article>
+					<h2><a href="">{{ post.title }}</a></h2>
+					<p>
+						Published at: <time datetime="{{ post.published_date }}">{{ post.published_date }}<time>
+					</p>
+					<p>{{ post.text|linebreaksbr }}</p>
+				</article>
+			{% endfor %}
+		</main>
 	</body>
 </html>
