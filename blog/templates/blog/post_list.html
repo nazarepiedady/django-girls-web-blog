@@ -1,38 +1,20 @@
-{% load static %}
+{% extends 'blog/base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Django Girls Blog</title>
-		<link rel="stylesheet" href="{% static 'blog/styles/blog.css' %}">
-	</head>
-	<body>
-		<header class="header">
-			<h1>
-				<a href="/">Django Girls Blog</a>
-			</h1>
-		</header>
-
-		<main class="main">
-			{% for post in posts %}
-				<article class="post">
-					<h2 class="post__title">
-						<a class="post__link" href="">{{ post.title }}</a>
-					</h2>
-					<p class="post__date-container">
-						Published at:
-						<time class="post__date"
-							  datetime="{{ post.published_date }}">
-							  {{ post.published_date }}
-						<time>
-					</p>
-					<p class="post__content">
-						{{ post.text|linebreaksbr }}
-					</p>
-				</article>
-			{% endfor %}
-		</main>
-	</body>
-</html>
+{% block content %}
+	{% for post in posts %}
+		<article class="post">
+			<h2 class="post__title">
+				<a class="post__link" href="">{{ post.title }}</a>
+			</h2>
+			<p class="post__date-container">
+				Published at: <time class="post__date"
+									datetime="{{ post.published_date }}">
+									{{ post.published_date }}
+							  <time>
+			</p>
+			<p class="post__content">
+				{{ post.text|linebreaksbr }}
+			</p>
+		</article>
+	{% endfor %}
+{% endblock %}
