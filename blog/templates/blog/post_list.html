@@ -24,7 +24,9 @@
 					<p>
 						Published at: <time datetime="{{ post.published_date }}">{{ post.published_date }}<time>
 					</p>
-					<p>{{ post.text|linebreaksbr }}</p>
+					<p class="post__content">
+						{{ post.text|linebreaksbr }}
+					</p>
 				</article>
 			{% endfor %}
 		</main>
