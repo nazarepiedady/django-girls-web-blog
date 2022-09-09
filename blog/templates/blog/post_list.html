@@ -22,7 +22,11 @@
 						<a class="post__link" href="">{{ post.title }}</a>
 					</h2>
 					<p>
-						Published at: <time datetime="{{ post.published_date }}">{{ post.published_date }}<time>
+						Published at:
+						<time class="post__date"
+							  datetime="{{ post.published_date }}">
+							  {{ post.published_date }}
+						<time>
 					</p>
 					<p class="post__content">
 						{{ post.text|linebreaksbr }}
