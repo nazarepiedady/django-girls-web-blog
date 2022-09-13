@@ -4,7 +4,9 @@
 	{% for post in posts %}
 		<article class="post">
 			<h2 class="post__title">
-				<a class="post__link" href="">{{ post.title }}</a>
+				<a class="post__link" href="{% url 'post_detail' pk=post.pk %}">
+					{{ post.title }}
+				</a>
 			</h2>
 			<p class="post__date-container">
 				Published at: <time class="post__date"
